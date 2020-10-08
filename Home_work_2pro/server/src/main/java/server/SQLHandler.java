@@ -89,13 +89,7 @@ public class SQLHandler {
         }
     }
 
-/**
- * метод добавления сообщения в БД
- * @param sender ник отправителя
- * @param receiver ник получателя "null" если всем пользователям
- * @param text текст сообщения
- * @param date дата и время сообщения в текстовом виде
- * */
+
     public static boolean addMessage(String sender, String receiver, String text, String date) {
         try {
             psAddMessage.setString(1, sender);
@@ -109,13 +103,7 @@ public class SQLHandler {
         }
     }
 
-    /**
-     * метод извлечения сообщений из БД
-     * Извлекаются все сообщения пользователя с ником nick,
-     * отправленные им и приходящие к нему
-     * @param nick ник пользователя, сообщения которого извлекаются
-     * @return возвращает сроку сформированную из всех сообщений, которые должен увидеть данный пользователь
-     * */
+
     public static String getMessageForNick(String nick) {
         StringBuilder sb = new StringBuilder();
 

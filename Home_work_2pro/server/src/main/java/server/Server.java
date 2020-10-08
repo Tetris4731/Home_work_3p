@@ -59,9 +59,9 @@ public class Server {
 
         String message = String.format(" %s %s : %s", formater.format(new Date()), sender.getNickname(), msg);
 
-        //==============//
+
         SQLHandler.addMessage(sender.getNickname(), "null", msg, formater.format(new Date()));
-        //==============//
+
         for (ClientHandler c : clients) {
             c.sendMsg(message);
         }
@@ -73,9 +73,9 @@ public class Server {
             if (c.getNickname().equals(receiver)) {
                 c.sendMsg(message);
 
-                //==============//
+
                 SQLHandler.addMessage(sender.getNickname(),receiver,msg,"once upon a time");
-                //==============//
+
 
                 if (!c.equals(sender)) {
                     sender.sendMsg(message);
